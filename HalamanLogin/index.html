@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tugas Login PPLG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Login</h1>
+        
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="userInput" placeholder="Masukkan username">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="passInput" placeholder="Masukkan password">
+        </div>
+
+        <button onclick="prosesLogin()">LOGIN</button>
+    </div>
+
+    <div id="popupPesan" class="modal">
+        <div class="modal-content">
+            <h2 id="statusTeks"></h2>
+            <button onclick="tutupPesan()">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
