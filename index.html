@@ -1,35 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Tugas Login PPLG</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang - Faizan Syahda</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      html {
+        overflow-y: scroll;
+      }
 
-    <div class="login-container">
-        <h1>Login</h1>
-        
-        <div class="input-group">
-            <label>Username</label>
-            <input type="text" id="userInput" placeholder="Masukkan username">
+      body {
+        background-color: #f0fdfa; /* Background biru muda */
+        min-height: 100vh;
+      }
+      .navbar {
+        background-color: #1e1b4b !important;
+      }
+      .nav-link {
+        color: white !important;
+        font-size: 0.9rem;
+      }
+      .navbar-brand {
+        color: white !important;
+        font-weight: bold;
+      }
+
+      /* KARTU PROFIL (Biar beda dari punya Laudza) */
+      .profile-card {
+        background: white;
+        border-radius: 30px; /* Sudut kotak sangat tumpul */
+        padding: 50px;
+        margin-top: 80px;
+        box-shadow: 0 20px 40px rgba(30, 27, 75, 0.1); /* Bayangan biru tua tipis */
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .img-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .foto-bulat {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 8px solid #f0fdfa; /* Ring sewarna background */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Label kecil di atas nama */
+      .label-identitas {
+        background: #e2e8f0;
+        color: #475569;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      .nama-faizan {
+        color: #1e1b4b;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+
+      .deskripsi-faizan {
+        color: #64748b;
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="CV.html">Faizan Syahda</a>
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item">
+              <a class="nav-link active-page" href="tentang.html">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pendidikan.html">Pendidikan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pengalaman.html">Pengalaman</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="prestasi.html">Prestasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kemampuan.html">Kemampuan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kontak.html">Kontak</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portofolio.html">Portofolio</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center">
+      <div class="profile-card text-center col-lg-8">
+        <div class="img-container">
+          <img src="img/profil1.jpeg" alt="Faizan" class="foto-bulat" />
         </div>
 
-        <div class="input-group">
-            <label>Password</label>
-            <input type="password" id="passInput" placeholder="Masukkan password">
-        </div>
+        <div class="mt-4">
+          <span class="label-identitas">PROFIL PELAJAR</span>
+          <h1 class="nama-faizan">Faizan Syahda Ramadhan</h1>
+          <p class="fw-bold text-primary">PPLG | SMK Negeri 1 Bawang</p>
 
-        <button onclick="prosesLogin()">LOGIN</button>
+          <div class="deskripsi-faizan">
+            <p>
+              Halo! Saya adalah seorang siswa jurusan
+              <strong>Pengembangan Perangkat Lunak dan Gim</strong> yang
+              antusias dalam dunia pemrograman. Fokus saya saat ini adalah
+              membangun pengalaman baru dan menyelesaikan berbagai proyek
+              kreatif di sekolah.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div id="popupPesan" class="modal">
-        <div class="modal-content">
-            <h2 id="statusTeks"></h2>
-            <button onclick="tutupPesan()">OK</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
+  </body>
 </html>
