@@ -1,97 +1,62 @@
 * {
-    margin: 0; padding: 0; box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+body, html {
+    height: 100%;
 }
 
-.glass-container {
+/* Background Image Full Screen */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
 }
 
-.login-box {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    padding: 40px;
-    text-align: center;
+/* Efek Kotak Blur (Glassmorphism) */
+.login-card {
+    background: rgba(255, 255, 255, 0.1); /* Putih transparan */
+    backdrop-filter: blur(10px); /* Efek Blur */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
 }
 
-.profile-icon {
-    font-size: 50px;
-    color: #00d2ff;
-    margin-bottom: 15px;
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    border-color: #0d6efd;
+    box-shadow: none;
 }
 
-.header-section h2 {
-    font-weight: 700;
-    letter-spacing: 1px;
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
-.header-section p {
-    font-size: 0.8rem;
-    color: #aaa;
-    margin-bottom: 30px;
-}
-
-.input-group-custom {
-    position: relative;
-    border-bottom: 2px solid rgba(255,255,255,0.1);
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
-}
-
-.input-group-custom input {
-    width: 100%;
-    background: transparent;
+/* Tombol Biru Standar */
+.btn-primary {
+    background-color: #0d6efd;
     border: none;
-    outline: none;
-    color: white;
-    padding: 10px 35px;
-}
-
-.input-group-custom i {
-    position: absolute;
-    color: #00d2ff;
-}
-
-#toggleBtn {
-    right: 0;
-    cursor: pointer;
-    color: #888;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    border-radius: 30px;
-    border: none;
-    background: linear-gradient(to right, #00d2ff, #3a7bd5);
-    color: white;
     font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
-button:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-}
-
-.alert {
-    border-radius: 12px;
-    font-size: 0.9rem;
+.btn-primary:hover {
+    background-color: #0b5ed7;
 }
