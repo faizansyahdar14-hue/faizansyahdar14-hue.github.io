@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Premium Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        body { 
+            background: #0f111a; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+        }
+
+        .calc { 
+            background: #1a1d29; 
+            padding: 24px; 
+            border-radius: 24px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5); 
+            width: 320px;
+            border: 1px solid #2d3142;
+        }
+
+        #display { 
+            width: 100%; 
+            height: 80px; 
+            background: #11141f; 
+            color: #ffffff; 
+            border: none; 
+            border-radius: 16px; 
+            margin-bottom: 24px; 
+            text-align: right; 
+            padding: 15px 20px; 
+            font-size: 2.5rem; 
+            outline: none;
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.5);
+            font-weight: 300;
+        }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 12px; 
+        }
+
+        button { 
+            height: 60px;
+            border: none; 
+            border-radius: 14px; 
+            font-size: 1.2rem; 
+            font-weight: 600;
+            cursor: pointer; 
+            background: #252a3d; 
+            color: #e2e8f0; 
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 0 #151926; /* Efek ketebalan tombol */
+        }
+
+        button:hover { 
+            background: #2d344d; 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #151926;
+        }
+
+        button:active { 
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 #151926;
+        }
+
+        /* Tombol Operator - Warna Indigo */
+        .op { 
+            background: #4f46e5; 
+            color: white; 
+            box-shadow: 0 4px 0 #3730a3;
+        }
+        .op:hover { 
+            background: #6366f1; 
+            box-shadow: 0 6px 0 #3730a3;
+        }
+
+        /* Tombol AC - Warna Muted Red */
+        .clear { 
+            background: #334155; 
+            color: #f87171; 
+            box-shadow: 0 4px 0 #1e293b;
+        }
+
+        /* Tombol Equal - Warna Teal */
+        .equal { 
+            background: #0d9488; 
+            color: white; 
+            grid-column: span 2;
+            box-shadow: 0 4px 0 #0f766e;
+        }
+        .equal:hover { 
+            background: #14b8a6; 
+            box-shadow: 0 6px 0 #0f766e;
+        }
+
+        .zero { grid-column: span 1; }
+    </style>
+</head>
+<body>
+
+    <div class="calc">
+        <input type="text" id="display" value="0" disabled>
+        
+        <div class="grid">
+            <button class="clear" onclick="reset()">AC</button>
+            <button class="op" onclick="hapus()">⌫</button>
+            <button class="op" onclick="input('%')">%</button>
+            <button class="op" onclick="input('/')">÷</button>
+            
+            <button onclick="input('7')">7</button>
+            <button onclick="input('8')">8</button>
+            <button onclick="input('9')">9</button>
+            <button class="op" onclick="input('*')">×</button>
+            
+            <button onclick="input('4')">4</button>
+            <button onclick="input('5')">5</button>
+            <button onclick="input('6')">6</button>
+            <button class="op" onclick="input('-')">−</button>
+            
+            <button onclick="input('1')">1</button>
+            <button onclick="input('2')">2</button>
+            <button onclick="input('3')">3</button>
+            <button class="op" onclick="input('+')">+</button>
+            
+            <button onclick="input('0')">0</button>
+            <button onclick="input('.')">.</button>
+            <button class="equal" onclick="hitung()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let layar = document.getElementById('display');
+
+        function input(nilai) {
+            if (layar.value === '0' && nilai !== '.') {
+                layar.value = nilai;
+            } else {
+                layar.value += nilai;
+            }
+        }
+
+        function reset() {
+            layar.value = '0';
+        }
+
+        function hapus() {
+            if (layar.value.length === 1 || layar.value === 'Error') {
+                layar.value = '0';
+            } else {
+                layar.value = layar.value.slice(0, -1);
+            }
+        }
+
+        function hitung() {
+            try {
+                let ekspresi = layar.value.replace('÷', '/').replace('×', '*').replace('−', '-');
+                layar.value = eval(ekspresi);
+            } catch (err) {
+                layar.value = "Error";
+                setTimeout(reset, 1500);
+            }
+        }
+    </script>
+</body>
+</html>
