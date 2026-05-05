@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Kota Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Header Game -->
+        <h1>TEBAK KOTA</h1>
+        <p class="sub-title">Coba tebak nama kota di Indonesia berdasarkan petunjuknya!</p>
+
+        <!-- Kotak Clue (Tugas Praktik: Memudahkan pemain) -->
+        <div class="hint-box">
+            <span class="stat-label">📍 Clue Kota:</span>
+            <p id="hint-text">Mencari petunjuk untukmu...</p>
+        </div>
+
+        <!-- Area Kata Tersembunyi (_ _ _) -->
+        <div id="display-kata" class="kata-container"></div>
+        
+        <!-- Input Area -->
+        <div class="input-section">
+            <input type="text" id="input-huruf" maxlength="1" placeholder="?" autocomplete="off">
+            <button onclick="tebakHuruf()" id="btn-tebak">TEBAK</button>
+        </div>
+
+        <!-- Statistik Game (Tugas Praktik: Skor & Riwayat) -->
+        <div class="stats-grid">
+            <div class="stat-box">
+                <span class="stat-label">❤️ Nyawa</span>
+                <span id="sisa-kesempatan" class="stat-value">5</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">📜 Riwayat</span>
+                <div id="riwayat" class="stat-value">-</div>
+            </div>
+        </div>
+
+    <!-- Modal Pop-up untuk Menang/Kalah (Tugas Praktik 3.b) -->
+    <div id="modal-pesan" class="modal">
+        <div class="modal-content">
+            <h2 id="judul-modal">Info Game</h2>
+            <p id="teks-modal"></p>
+            <button onclick="tutupModal()" style="width: 100%; margin-top: 15px; background: #0ea5e9; color: white; border: none; padding: 10px; border-radius: 10px; cursor: pointer;">MAIN LAGI</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

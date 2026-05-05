@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Kota Indonesia - PPLG</title>
+    
+    <!-- CSS Internal -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #ec4899;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text);
+        }
+
+        .game-container {
+            background: var(--white);
+            width: 90%;
+            max-width: 420px;
+            padding: 35px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sub-title {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .hint-box {
+            background: #fffbeb;
+            border: 1px dashed var(--accent);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .hint-box p {
+            margin: 5px 0 0 0;
+            font-size: 0.9rem;
+            color: #92400e;
+            line-height: 1.5;
+        }
+
+        .kata-container {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 8px;
+            margin: 30px 0;
+            color: var(--primary);
+            min-height: 60px;
+        }
+
+        .input-section {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        input {
+            width: 55px;
+            height: 55px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        button {
+            padding: 0 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .stat-box {
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 15px;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        #sisa-kesempatan {
+            color: #ef4444;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            width: 85%;
+            max-width: 320px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>TEBAK KOTA</h1>
+        <p class="sub-title">Coba tebak nama kota di Indonesia berdasarkan petunjuknya!</p>
+
+        <div class="hint-box">
+            <span class="stat-label">📍 Clue Kota:</span>
+            <p id="hint-text">Mencari petunjuk untukmu...</p>
+        </div>
+
+        <div id="display-kata" class="kata-container"></div>
+        
+        <div class="input-section">
+            <input type="text" id="input-huruf" maxlength="1" placeholder="?" autocomplete="off">
+            <button onclick="tebakHuruf()" id="btn-tebak">TEBAK</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <span class="stat-label">❤️ Nyawa</span>
+                <span id="sisa-kesempatan" class="stat-value">5</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">📜 Riwayat</span>
+                <div id="riwayat" class="stat-value">-</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-pesan" class="modal">
+        <div class="modal-content">
+            <h2 id="judul-modal">Info Game</h2>
+            <p id="teks-modal"></p>
+            <button onclick="tutupModal()" style="width: 100%; margin-top: 15px; background: #0ea5e9; color: white; border: none; padding: 10px; border-radius: 10px; cursor: pointer;">MAIN LAGI</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Internal -->
+    <script>
+        const daftarKota = [
+            { nama: "BANJARNEGARA", clue: "Kota yang terkenal dengan minuman Dawet Ayu-nya" },
+            { nama: "WONOSOBO", clue: "Kota dingin di kaki gunung Dieng" },
+            { nama: "YOGYAKARTA", clue: "Kota pelajar yang terkenal dengan Jalan Malioboro" },
+            { nama: "BANDUNG", clue: "Ibu kota Jawa Barat yang dijuluki Kota Kembang" },
+            { nama: "JAKARTA", clue: "Ibu kota negara Indonesia dengan ikon Monas" },
+            { nama: "SURABAYA", clue: "Kota pahlawan dengan lambang Ikan Sura dan Buaya" }
+        ];
+
+        let pilihanSaatIni = {};
+        let arrayJawaban = [];
+        let kesempatan = 5;
+        let riwayatHuruf = [];
+
+        function mulaiGame() {
+            pilihanSaatIni = daftarKota[Math.floor(Math.random() * daftarKota.length)];
+            const kata = pilihanSaatIni.nama;
+            arrayJawaban = Array(kata.length).fill("_");
+            kesempatan = 5;
+            riwayatHuruf = [];
+            document.getElementById("hint-text").innerText = pilihanSaatIni.clue;
+            updateTampilan();
+        }
+
+        function updateTampilan() {
+            document.getElementById("display-kata").innerText = arrayJawaban.join(" ");
+            document.getElementById("sisa-kesempatan").innerText = kesempatan;
+            document.getElementById("riwayat").innerText = riwayatHuruf.length > 0 ? riwayatHuruf.join(", ") : "-";
+        }
+
+        function tebakHuruf() {
+            const input = document.getElementById("input-huruf");
+            const huruf = input.value.toUpperCase();
+            input.value = "";
+
+            if (!huruf || riwayatHuruf.includes(huruf)) return;
+
+            riwayatHuruf.push(huruf);
+
+            if (pilihanSaatIni.nama.includes(huruf)) {
+                // Proses perulangan (looping) untuk mengecek setiap huruf
+                for (let i = 0; i < pilihanSaatIni.nama.length; i++) {
+                    if (pilihanSaatIni.nama[i] === huruf) {
+                        arrayJawaban[i] = huruf;
+                    }
+                }
+            } else {
+                kesempatan--;
+            }
+
+            cekStatus();
+            updateTampilan();
+        }
+
+        function cekStatus() {
+            if (!arrayJawaban.includes("_")) {
+                tampilkanModal("ANDA MENANG! 🎉", "Benar, kotanya adalah " + pilihanSaatIni.nama);
+                mulaiGame();
+            } else if (kesempatan <= 0) {
+                tampilkanModal("GAME OVER 💀", "Kotanya adalah: " + pilihanSaatIni.nama);
+                mulaiGame();
+            }
+        }
+
+        function tampilkanModal(judul, pesan) {
+            document.getElementById("judul-modal").innerText = judul;
+            document.getElementById("teks-modal").innerText = pesan;
+            document.getElementById("modal-pesan").style.display = "flex";
+        }
+
+        function tutupModal() {
+            document.getElementById("modal-pesan").style.display = "none";
+        }
+
+        // Inisialisasi awal
+        mulaiGame();
+    </script>
+</body>
+</html>

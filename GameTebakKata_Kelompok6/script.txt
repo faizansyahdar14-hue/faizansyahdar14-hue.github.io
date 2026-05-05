@@ -1,0 +1,84 @@
+// Data kota dengan clue-nya
+const daftarKota = [
+    { nama: "BANJARNEGARA", clue: "Kota yang terkenal dengan minuman Dawet Ayu-nya" },
+    { nama: "WONOSOBO", clue: "Kota dingin di kaki gunung Dieng" },
+    { nama: "YOGYAKARTA", clue: "Kota pelajar yang terkenal dengan Jalan Malioboro" },
+    { nama: "BANDUNG", clue: "Ibu kota Jawa Barat yang dijuluki Kota Kembang" },
+    { nama: "JAKARTA", clue: "Ibu kota negara Indonesia dengan ikon Monas" },
+    { nama: "SURABAYA", clue: "Kota pahlawan dengan lambang Ikan Sura dan Buaya" }
+];
+
+let pilihanSaatIni = {};
+let arrayJawaban = [];
+let kesempatan = 5;
+let riwayatHuruf = [];
+
+function mulaiGame() {
+    // Memilih kota secara acak dari array
+    pilihanSaatIni = daftarKota[Math.floor(Math.random() * daftarKota.length)];
+    const kata = pilihanSaatIni.nama;
+    
+    // Inisialisasi tampilan garis bawah sesuai jumlah huruf
+    arrayJawaban = Array(kata.length).fill("_");
+    kesempatan = 5;
+    riwayatHuruf = [];
+    
+    // Tampilkan clue kota tersebut
+    document.getElementById("hint-text").innerText = pilihanSaatIni.clue;
+    updateTampilan();
+}
+
+function updateTampilan() {
+    document.getElementById("display-kata").innerText = arrayJawaban.join(" ");
+    document.getElementById("sisa-kesempatan").innerText = kesempatan;
+    document.getElementById("riwayat").innerText = riwayatHuruf.length > 0 ? riwayatHuruf.join(", ") : "-";
+}
+
+function tebakHuruf() {
+    const input = document.getElementById("input-huruf");
+    const huruf = input.value.toUpperCase();
+    input.value = "";
+
+    if (!huruf || riwayatHuruf.includes(huruf)) return;
+
+    riwayatHuruf.push(huruf);
+
+    // Cek apakah huruf ada di nama kota
+    if (pilihanSaatIni.nama.includes(huruf)) {
+        for (let i = 0; i < pilihanSaatIni.nama.length; i++) {
+            if (pilihanSaatIni.nama[i] === huruf) {
+                arrayJawaban[i] = huruf;
+            }
+        }
+    } else {
+        kesempatan--;
+    }
+
+    cekStatus();
+    updateTampilan();
+}
+
+function cekStatus() {
+    // Cek kemenangan
+    if (!arrayJawaban.includes("_")) {
+        tampilkanModal("ANDA MENANG! 🎉", "Benar, kotanya adalah " + pilihanSaatIni.nama);
+        mulaiGame();
+    } 
+    // Cek kekalahan
+    else if (kesempatan <= 0) {
+        tampilkanModal("GAME OVER 💀", "Kotanya adalah: " + pilihanSaatIni.nama);
+        mulaiGame();
+    }
+}
+
+function tampilkanModal(judul, pesan) {
+    document.getElementById("judul-modal").innerText = judul;
+    document.getElementById("teks-modal").innerText = pesan;
+    document.getElementById("modal-pesan").style.display = "flex";
+}
+
+function tutupModal() {
+    document.getElementById("modal-pesan").style.display = "none";
+}
+
+mulaiGame();
