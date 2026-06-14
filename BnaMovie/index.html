@@ -1,0 +1,1698 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banjarnegara Movies 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --blue: #2563eb;
+        --blue-lt: #60a5fa;
+        --blue-mid: #3b82f6;
+        --bg: #0b1629;
+        --bg2: #0f1e36;
+        --bg3: #162543;
+        --text: #e2eeff;
+        --text-dim: #6b90c0;
+        --white: #fff;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Sora", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      /* ── NAVBAR ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 56px;
+        transition:
+          background 0.4s,
+          box-shadow 0.4s;
+      }
+      nav.scrolled {
+        background: rgba(11, 22, 41, 0.95);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 1px 0 rgba(59, 130, 246, 0.15);
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .nav-logo img {
+        height: 44px;
+        width: auto;
+      }
+      .nav-logo img:nth-child(3) {
+        height: 66px; /* sesuaikan */
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+      .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 500;
+        opacity: 0.7;
+        transition:
+          opacity 0.2s,
+          color 0.2s;
+      }
+      .nav-links a:hover {
+        opacity: 1;
+        color: var(--blue-lt);
+      }
+      .nav-cta {
+        background: var(--blue);
+        color: var(--white);
+        padding: 10px 22px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      }
+      .nav-cta:hover {
+        background: var(--blue-mid);
+        transform: translateY(-1px);
+      }
+
+      /* ── HERO ── */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 120px 56px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+      /* tugu silhouette SVG background */
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 70% 60% at 65% 40%,
+            rgba(37, 99, 235, 0.22) 0%,
+            transparent 65%
+          ),
+          radial-gradient(
+            ellipse 40% 50% at 15% 85%,
+            rgba(59, 130, 246, 0.1) 0%,
+            transparent 60%
+          ),
+          linear-gradient(170deg, #0b1629 0%, #0e1d38 55%, #0b1629 100%);
+      }
+      /* dot grid */
+      .hero-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(59, 130, 246, 0.15) 1px,
+          transparent 1px
+        );
+        background-size: 30px 30px;
+        mask-image: radial-gradient(
+          ellipse 75% 75% at 65% 35%,
+          black 20%,
+          transparent 75%
+        );
+      }
+      /* tugu silhouette on right */
+      .tugu-deco {
+        position: absolute;
+        right: -20px;
+        bottom: 0;
+        top: 0;
+        width: 340px;
+        display: flex;
+        align-items: flex-end;
+        opacity: 0.07;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .tugu-deco svg {
+        width: 100%;
+        height: auto;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 680px;
+      }
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(37, 99, 235, 0.15);
+        border: 1px solid rgba(59, 130, 246, 0.35);
+        border-radius: 99px;
+        padding: 6px 16px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--blue-lt);
+        width: fit-content;
+        margin-bottom: 24px;
+        animation: fadeUp 0.7s ease both;
+      }
+      .hero-tag::before {
+        content: "●";
+        font-size: 0.45rem;
+        color: #60a5fa;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.25;
+        }
+      }
+
+      .hero-logo-img {
+        width: 280px;
+        margin-bottom: 28px;
+        animation: fadeUp 0.7s 0.1s ease both;
+        filter: drop-shadow(0 8px 32px rgba(37, 99, 235, 0.5));
+      }
+      .hero-tagline {
+        font-family: "Fraunces", serif;
+        font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--text);
+        animation: fadeUp 0.7s 0.2s ease both;
+      }
+      .hero-tagline em {
+        font-style: italic;
+        color: var(--blue-lt);
+      }
+      .hero-sub {
+        margin-top: 18px;
+        max-width: 480px;
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: var(--text-dim);
+        animation: fadeUp 0.7s 0.3s ease both;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+        animation: fadeUp 0.7s 0.4s ease both;
+      }
+      .btn-primary {
+        background: var(--blue);
+        color: var(--white);
+        padding: 13px 30px;
+        border-radius: 9px;
+        font-weight: 600;
+        font-size: 0.88rem;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+      }
+      .btn-primary:hover {
+        background: var(--blue-mid);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(37, 99, 235, 0.5);
+      }
+      .btn-ghost {
+        border: 1.5px solid rgba(96, 165, 250, 0.35);
+        color: var(--blue-lt);
+        padding: 13px 30px;
+        border-radius: 9px;
+        font-weight: 500;
+        font-size: 0.88rem;
+        text-decoration: none;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .btn-ghost:hover {
+        border-color: var(--blue-lt);
+        background: rgba(37, 99, 235, 0.1);
+      }
+
+      /* info cards row */
+      .hero-cards {
+        display: flex;
+        gap: 14px;
+        margin-top: 44px;
+        flex-wrap: wrap;
+        animation: fadeUp 0.7s 0.5s ease both;
+      }
+      .hcard {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 12px;
+        padding: 14px 20px;
+        backdrop-filter: blur(6px);
+      }
+      .hcard-label {
+        font-size: 0.62rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--blue-lt);
+        margin-bottom: 4px;
+      }
+      .hcard-val {
+        font-family: "Fraunces", serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      /* ── SECTION BASE ── */
+      .section-wrap {
+        padding: 88px 56px;
+      }
+      .section-wrap.alt {
+        background: var(--bg2);
+        border-top: 1px solid rgba(59, 130, 246, 0.1);
+      }
+      .section-label {
+        font-size: 0.68rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--blue-lt);
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 48px;
+      }
+
+      /* ── TENTANG ── */
+      .tentang-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .tentang-visual {
+        position: relative;
+      }
+      .tentang-frame {
+        aspect-ratio: 3/4; /* ganti dari 4/5 jadi lebih tinggi */
+        border-radius: 20px;
+        background: linear-gradient(145deg, var(--bg3), var(--bg2));
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .tentang-frame img {
+        width: 75%;
+        height: 100%;
+        object-fit: contain; /* ganti dari default ke contain biar ga kepotong */
+        object-position: center;
+        filter: drop-shadow(0 8px 32px rgba(37, 99, 235, 0.6));
+      }
+      .tentang-frame::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 45%;
+        background: linear-gradient(to top, var(--bg2), transparent);
+      }
+      .tentang-badge {
+        position: absolute;
+        bottom: -16px;
+        right: -16px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: var(--blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        box-shadow: 0 8px 28px rgba(37, 99, 235, 0.5);
+      }
+      .tentang-badge-year {
+        font-family: "Fraunces", serif;
+        font-size: 1.6rem;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .tentang-badge-text {
+        font-size: 0.48rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 700;
+        opacity: 0.85;
+      }
+      .tentang-text p {
+        font-size: 0.93rem;
+        line-height: 1.8;
+        color: var(--text-dim);
+        margin-bottom: 16px;
+      }
+      .stat-row {
+        display: flex;
+        gap: 32px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+      .stat-num {
+        font-family: "Fraunces", serif;
+        font-size: 2.4rem;
+        color: var(--blue-lt);
+        font-weight: 800;
+        line-height: 1;
+      }
+      .stat-label {
+        font-size: 0.68rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        margin-top: 3px;
+      }
+
+      /* ── LINIMASA ── */
+      .timeline-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+      .tl-item {
+        padding: 26px 28px;
+        border-left: 1px solid rgba(59, 130, 246, 0.2);
+        position: relative;
+        transition: background 0.25s;
+        border-radius: 0 8px 8px 0;
+      }
+      .tl-item:hover {
+        background: rgba(37, 99, 235, 0.07);
+      }
+      .tl-item::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 30px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--bg2);
+        border: 2px solid var(--blue-lt);
+        transition: background 0.25s;
+      }
+      .tl-item:hover::before {
+        background: var(--blue-lt);
+      }
+      .tl-step {
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--blue-lt);
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+      .tl-event {
+        font-family: "Fraunces", serif;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+        line-height: 1.3;
+      }
+      .tl-date {
+        font-size: 0.8rem;
+        color: var(--text-dim);
+      }
+
+      /* ── JURI ── */
+      .juri-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 24px;
+        margin-top: 48px;
+      }
+      .juri-card {
+        background: var(--bg3);
+        border: 1px solid rgba(59, 130, 246, 0.13);
+        border-radius: 16px;
+        overflow: hidden;
+        transition:
+          border-color 0.25s,
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .juri-card:hover {
+        border-color: rgba(59, 130, 246, 0.45);
+        transform: translateY(-5px);
+        box-shadow: 0 14px 40px rgba(37, 99, 235, 0.18);
+      }
+      .juri-photo {
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: linear-gradient(145deg, #1a2d4a, var(--bg2));
+        position: relative;
+      }
+      .juri-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+      .juri-photo-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+      }
+      .juri-photo::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: linear-gradient(to top, var(--bg3), transparent);
+      }
+      .juri-info {
+        padding: 18px 20px 22px;
+      }
+      .juri-role {
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--blue-lt);
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+      .juri-name {
+        font-family: "Fraunces", serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .juri-pos {
+        font-size: 0.8rem;
+        color: var(--text-dim);
+        line-height: 1.5;
+      }
+      .juri-ketua {
+        border-color: rgba(59, 130, 246, 0.35);
+      }
+      .juri-ketua .juri-role::before {
+        content: "★ ";
+        color: #fcd34d;
+      }
+
+      /* ── KETENTUAN ── */
+      .ket-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-top: 48px;
+      }
+      .ket-card {
+        background: var(--bg3);
+        border: 1px solid rgba(59, 130, 246, 0.13);
+        border-radius: 16px;
+        padding: 28px 28px;
+        transition: border-color 0.25s;
+      }
+      .ket-card:hover {
+        border-color: rgba(59, 130, 246, 0.35);
+      }
+      .ket-icon {
+        font-size: 1.8rem;
+        margin-bottom: 14px;
+      }
+      .ket-title {
+        font-family: "Fraunces", serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+        color: var(--white);
+      }
+      .ket-list {
+        list-style: none;
+      }
+      .ket-list li {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        line-height: 1.6;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .ket-list li:last-child {
+        border-bottom: none;
+      }
+      .ket-list li::before {
+        content: "→";
+        color: var(--blue-lt);
+        flex-shrink: 0;
+        font-size: 0.8rem;
+        margin-top: 2px;
+      }
+
+      /* ── PENGHARGAAN ── */
+      .award-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-top: 48px;
+      }
+      .award-card {
+        background: var(--bg3);
+        border: 1px solid rgba(59, 130, 246, 0.13);
+        border-radius: 16px;
+        padding: 28px;
+      }
+      .award-type {
+        font-size: 0.68rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--blue-lt);
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      .award-name {
+        font-family: "Fraunces", serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .award-levels {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .award-level {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        background: rgba(37, 99, 235, 0.08);
+        border-radius: 8px;
+        font-size: 0.82rem;
+      }
+      .award-level span:last-child {
+        color: var(--blue-lt);
+        font-weight: 600;
+        font-size: 0.75rem;
+      }
+      .award-note {
+        margin-top: 24px;
+        padding: 18px 20px;
+        background: rgba(37, 99, 235, 0.08);
+        border-left: 3px solid var(--blue);
+        border-radius: 0 10px 10px 0;
+        font-size: 0.83rem;
+        color: var(--text-dim);
+        line-height: 1.65;
+      }
+
+      /* ── CTA DAFTAR ── */
+      #daftar {
+        padding: 100px 56px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      #daftar::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 60% at 50% 50%,
+          rgba(37, 99, 235, 0.12) 0%,
+          transparent 70%
+        );
+      }
+      #daftar > * {
+        position: relative;
+        z-index: 1;
+      }
+      #daftar .section-title {
+        margin-bottom: 16px;
+      }
+      #daftar > p {
+        max-width: 480px;
+        margin: 0 auto 14px;
+        color: var(--text-dim);
+        line-height: 1.75;
+        font-size: 0.93rem;
+      }
+      .daftar-link {
+        font-size: 0.78rem;
+        color: var(--blue-lt);
+        margin-bottom: 32px;
+        display: block;
+      }
+      .daftar-link a {
+        color: var(--blue-lt);
+      }
+      .daftar-actions {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ── KONTAK ── */
+      .kontak-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+        margin-top: 48px;
+      }
+      .kontak-card {
+        background: var(--bg3);
+        border: 1px solid rgba(59, 130, 246, 0.13);
+        border-radius: 14px;
+        padding: 24px 24px;
+        transition: border-color 0.25s;
+      }
+      .kontak-card:hover {
+        border-color: rgba(59, 130, 246, 0.35);
+      }
+      .kontak-icon {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+      }
+      .kontak-role {
+        font-size: 0.62rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--blue-lt);
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+      .kontak-name {
+        font-family: "Fraunces", serif;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .kontak-detail {
+        font-size: 0.82rem;
+        color: var(--text-dim);
+      }
+      .kontak-detail a {
+        color: var(--blue-lt);
+        text-decoration: none;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: #060e1c;
+        border-top: 1px solid rgba(59, 130, 246, 0.1);
+        padding: 52px 56px 28px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+      .footer-brand img {
+        height: 52px;
+        margin-bottom: 14px;
+        filter: brightness(1.1);
+      }
+      .footer-brand p {
+        font-size: 0.82rem;
+        color: var(--text-dim);
+        line-height: 1.7;
+      }
+      .footer-col h4 {
+        font-size: 0.63rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--blue-lt);
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col li {
+        margin-bottom: 9px;
+      }
+      .footer-col a {
+        color: var(--text-dim);
+        text-decoration: none;
+        font-size: 0.82rem;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--text);
+      }
+     .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column; /* tambah ini */
+  align-items: center;    /* tambah ini */
+  flex-wrap: wrap;
+  gap: 0;
+}
+      .footer-bottom p {
+        font-size: 0.72rem;
+        color: var(--text-dim);
+        opacity: 0.55;
+      }
+      .social-links {
+        display: flex;
+        gap: 10px;
+      }
+      .social-links a {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        border: 1px solid rgba(59, 130, 246, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-dim);
+        font-size: 0.72rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .social-links a:hover {
+        background: rgba(37, 99, 235, 0.18);
+        color: var(--blue-lt);
+        border-color: var(--blue-lt);
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ── BERITA ── */
+      .berita-grid {
+        display: grid;
+        grid-template-columns: 1.7fr 1fr 1fr;
+        gap: 22px;
+        margin-top: 48px;
+      }
+      .berita-card {
+        background: var(--bg3);
+        border: 1px solid rgba(59, 130, 246, 0.13);
+        border-radius: 16px;
+        overflow: hidden;
+        transition:
+          border-color 0.25s,
+          transform 0.25s;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+      .berita-card:hover {
+        border-color: rgba(59, 130, 246, 0.4);
+        transform: translateY(-4px);
+      }
+      .berita-thumb {
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        position: relative;
+        background: var(--bg2);
+      }
+      .berita-card:first-child .berita-thumb {
+        aspect-ratio: 4/3;
+      }
+      .berita-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .berita-thumb-placeholder {
+        width: 100%;
+        height: 100%;
+        min-height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #162543, var(--bg2));
+        font-size: 2.5rem;
+      }
+      .berita-card:first-child .berita-thumb-placeholder {
+        font-size: 3.5rem;
+      }
+      .berita-body {
+        padding: 18px 20px 22px;
+      }
+      .berita-tag {
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--blue-lt);
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+      .berita-judul {
+        font-family: "Fraunces", serif;
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+        color: var(--text);
+      }
+      .berita-card:first-child .berita-judul {
+        font-size: 1.25rem;
+      }
+      .berita-desc {
+        font-size: 0.8rem;
+        color: var(--text-dim);
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+      .berita-date {
+        font-size: 0.72rem;
+        color: var(--text-dim);
+        opacity: 0.6;
+      }
+
+      /* scan card special style */
+      .berita-scan-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+      }
+      .berita-scan-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+     /* ── MOBILE ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 20px; }
+  .nav-links, .nav-cta { display: none; }
+  .section-wrap { padding: 64px 20px; }
+  #hero { padding: 100px 20px 60px; }
+  .tentang-grid, .ket-grid, .award-grid { grid-template-columns: 1fr; }
+  .berita-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .tugu-deco { display: none; }
+  #daftar { padding: 72px 20px; }
+}
+@media (max-width: 768px) {
+  nav { padding: 12px 16px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-logo img { height: 36px; }
+
+  #hero { padding: 80px 20px 60px; }
+  .hero-tag { font-size: .6rem; letter-spacing: 1px; padding: 5px 12px; white-space: normal; text-align: center; }
+  .hero-logo-img { width: 220px; }
+  .hero-tagline { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .hero-sub { font-size: .85rem; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions a { text-align: center; width: 100%; }
+  .hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hcard { padding: 10px 14px; }
+  .hcard-val { font-size: .95rem; }
+  .tugu-deco { display: none; }
+
+  .tentang-grid { grid-template-columns: 1fr !important; gap: 60px; }
+  .tentang-badge { bottom: -12px; right: 12px; width: 80px; height: 80px; }
+  .tentang-badge-year { font-size: 1.3rem; }
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .stat-num { font-size: 1.8rem; }
+
+  .section-wrap { padding: 56px 20px !important; }
+  .section-title { font-size: clamp(1.6rem, 5vw, 2.2rem) !important; margin-bottom: 32px; }
+
+  .ket-grid { grid-template-columns: 1fr !important; gap: 16px; }
+  .ket-card { padding: 22px 20px; }
+
+  .award-grid { grid-template-columns: 1fr !important; gap: 16px; }
+
+  .berita-grid { grid-template-columns: 1fr !important; }
+
+  .kontak-grid { grid-template-columns: 1fr 1fr !important; }
+
+  .footer-grid { grid-template-columns: 1fr !important; gap: 28px; }
+  footer { padding: 40px 20px 24px; }
+
+  #daftar { padding: 64px 20px !important; }
+  .daftar-actions { flex-direction: column; align-items: center; }
+  .daftar-actions a { width: 100%; text-align: center; }
+}
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <a href="#" class="nav-logo">
+        <img src="Beutiful.png" alt="Banjarnegara Movies" />
+        <img src="Ijo.png" alt="Banjarnegara Movies" />
+        <img src="New Ekraf.png" alt="Banjarnegara Movies" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#linimasa">Linimasa</a></li>
+        <li><a href="#juri">Juri</a></li>
+        <li><a href="#ketentuan">Ketentuan</a></li>
+        <li><a href="#penghargaan">Penghargaan</a></li>
+        <li><a href="#berita">Berita</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+      <a
+        href="https://wa.me/62089771353118"
+        target="_blank"
+        class="nav-cta"
+        >Kontak Admin</a
+      >
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <!-- Tugu Banjarnegara silhouette -->
+      <div class="tugu-deco">
+        <svg
+          viewBox="0 0 200 600"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="white"
+        >
+          <!-- simplified tugu shape -->
+          <rect x="90" y="520" width="20" height="70" rx="2" />
+          <rect x="80" y="510" width="40" height="14" rx="3" />
+          <!-- shaft with stripes -->
+          <rect x="93" y="200" width="14" height="310" rx="2" />
+          <rect x="89" y="280" width="22" height="6" rx="1" opacity=".6" />
+          <rect x="89" y="300" width="22" height="6" rx="1" opacity=".6" />
+          <rect x="89" y="320" width="22" height="6" rx="1" opacity=".6" />
+          <rect x="89" y="340" width="22" height="6" rx="1" opacity=".6" />
+          <rect x="89" y="360" width="22" height="6" rx="1" opacity=".6" />
+          <rect x="89" y="380" width="22" height="6" rx="1" opacity=".6" />
+          <rect x="89" y="400" width="22" height="6" rx="1" opacity=".6" />
+          <rect x="89" y="420" width="22" height="6" rx="1" opacity=".6" />
+          <rect x="89" y="440" width="22" height="6" rx="1" opacity=".6" />
+          <rect x="89" y="460" width="22" height="6" rx="1" opacity=".6" />
+          <!-- body wider -->
+          <rect x="85" y="140" width="30" height="65" rx="3" />
+          <!-- neck -->
+          <rect x="92" y="110" width="16" height="35" rx="2" />
+          <!-- crown top -->
+          <polygon points="100,20 80,110 120,110" />
+          <polygon points="100,30 88,80 112,80" opacity=".4" />
+          <!-- crown tips -->
+          <polygon points="100,10 95,35 105,35" />
+          <polygon points="84,45 80,75 90,68" />
+          <polygon points="116,45 120,75 110,68" />
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-tag">Festival Film Pelajar · Banjarnegara 2026</div>
+        <img
+          src="BnaLogo.png"
+          alt="Banjarnegara Movies"
+          class="hero-logo-img"
+        />
+        <h1 class="hero-tagline">
+          Ceritakan <em>Kearifan Lokal</em><br />Banjarnegara Lewat Film
+        </h1>
+        <p class="hero-sub">
+          Kompetisi film pelajar SMP & SMA se-Kabupaten Banjarnegara. Tema:
+          <strong style="color: var(--text)"
+            >"Banjarnegara Local Wisdom"</strong
+          >
+          — kehidupan sehari-hari, tradisi, budaya, kuliner, dan wisata.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://forms.gle/eZK4Kw3VM8bJd6AJA"
+            target="_blank"
+            class="btn-primary"
+            >Daftar Peserta</a
+          >
+          <a
+            href="https://forms.gle/3XeQwJQyXZ2NqD7X9"
+            target="_blank"
+            class="btn-primary"
+            >Pengumpulan karya</a
+          >
+          <a href="#ketentuan" class="btn-ghost">Lihat Ketentuan</a>
+        </div>
+        <div class="hero-cards">
+          <div class="hcard">
+            <div class="hcard-label">Deadline Karya</div>
+            <div class="hcard-val">11 Juli 2026</div>
+          </div>
+          <div class="hcard">
+            <div class="hcard-label">Kategori</div>
+            <div class="hcard-val">SMP & SMA</div>
+          </div>
+          <div class="hcard">
+            <div class="hcard-label">Biaya</div>
+            <div class="hcard-val">Gratis 🎉</div>
+          </div>
+          <div class="hcard">
+            <div class="hcard-label">Jenis Film</div>
+            <div class="hcard-val">Fiksi & Dokumenter</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section id="tentang" class="section-wrap">
+      <div class="tentang-grid">
+        <div class="tentang-visual reveal">
+          <div class="tentang-frame">
+            <img src="Tugu.png" alt="Banjarnegara Movies Logo" />
+          </div>
+          <div class="tentang-badge">
+            <div class="tentang-badge-year">2026</div>
+            <div class="tentang-badge-text">Edition</div>
+          </div>
+        </div>
+        <div class="tentang-text">
+          <div class="section-label reveal">Tentang Festival</div>
+          <h2 class="section-title reveal">
+            Panggung Sineas<br />Muda Banjarnegara
+          </h2>
+          <p class="reveal">
+            Banjarnegara Movies adalah festival film kompetitif yang
+            diselenggarakan oleh Dinas Pariwisata & Kebudayaan Kabupaten
+            Banjarnegara, Bidang Ekonomi Kreatif (EKRAF).
+          </p>
+          <p class="reveal">
+            Hadir sebagai wadah bagi pelajar SMP dan SMA se-Kabupaten
+            Banjarnegara untuk mengekspresikan kreativitas melalui karya film
+            yang mengangkat kearifan lokal daerah.
+          </p>
+          <p class="reveal">
+            Festival ini terbuka gratis, boleh mengirim lebih dari satu karya,
+            dan semua peserta mendapatkan sertifikat kepesertaan resmi.
+          </p>
+          <div class="stat-row reveal">
+            <div>
+              <div class="stat-num">2</div>
+              <div class="stat-label">Jenis Film</div>
+            </div>
+            <div>
+              <div class="stat-num">4</div>
+              <div class="stat-label">Kategori Award</div>
+            </div>
+            <div>
+              <div class="stat-num">0</div>
+              <div class="stat-label">Biaya Daftar</div>
+            </div>
+          </div>
+          <div style="margin-top: 32px" class="reveal">
+            <a
+              href="https://forms.gle/3XeQwJQyXZ2NqD7X9"
+              target="_blank"
+              class="btn-primary"
+              >Daftar Sekarang</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINIMASA -->
+    <section id="linimasa" class="section-wrap alt">
+      <div class="section-label reveal">Timeline</div>
+      <h2 class="section-title reveal">Jadwal Kegiatan 2026</h2>
+      <div class="timeline-grid">
+        <div class="tl-item reveal">
+          <div class="tl-step">01</div>
+          <div class="tl-event">Sosialisasi Tahap II & Pendaftaran</div>
+          <div class="tl-date">April 2026 (Minggu ke-IV)</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-step">02</div>
+          <div class="tl-event">Pendaftaran Peserta & Produksi</div>
+          <div class="tl-date">Mei 2026</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-step">03</div>
+          <div class="tl-event">Layar Pelajar di Festival Kopi Dieng</div>
+          <div class="tl-date">Mei – Juni 2026</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-step">04</div>
+          <div class="tl-event">Batas Akhir Pengumpulan Karya</div>
+          <div class="tl-date">11 Juli 2026 · 23.59 WIB</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-step">05</div>
+          <div class="tl-event">Kurasi & Penjurian</div>
+          <div class="tl-date">Juli 2026 (Minggu ke-II)</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-step">06</div>
+          <div class="tl-event">Penganugerahan & Penutupan</div>
+          <div class="tl-date">Juli 2026 (Minggu ke-III)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JURI -->
+    <section id="juri" class="section-wrap">
+      <div class="section-label reveal">Dewan Juri</div>
+      <h2 class="section-title reveal">Para Juri Festival 2026</h2>
+      <div class="juri-grid">
+        <div class="juri-card juri-ketua reveal">
+          <div class="juri-photo">
+            <img src="Sagiyo.jpeg" alt="Bp. Sagiyo" />
+          </div>
+          <div class="juri-info">
+            <div class="juri-role">Juri 1</div>
+            <div class="juri-name">Bp. Sagiyo, S.IP</div>
+            <div class="juri-pos">
+              Kepala Dinas Komunikasi dan Informatika Kab. Banjarnegara · Alumni
+              Komunikasi UGM
+            </div>
+          </div>
+        </div>
+        <div class="juri-card reveal">
+          <div class="juri-photo">
+            <img src="Ema.jpeg" alt="Dena Ema Pribadi" />
+          </div>
+          <div class="juri-info">
+            <div class="juri-role">Juri 2</div>
+            <div class="juri-name">Dena Ema Pribadi</div>
+            <div class="juri-pos">
+              Model · Aktor · Presenter. Dikenal lewat film 13 Bom di Jakarta,
+              Aum!, Love of Fate, dan lainnya.
+            </div>
+          </div>
+        </div>
+        <div class="juri-card reveal">
+          <div class="juri-photo">
+            <img src="Ferdinan.png" alt="Dr. Ferdinanda" />
+          </div>
+          <div class="juri-info">
+            <div class="juri-role">Juri 3</div>
+            <div class="juri-name">Dr. Ferdinanda, M.Sn</div>
+            <div class="juri-pos">
+              Dosen DKV Telkom University · Videografer PT Artec Technology ·
+              Alumni ISI Surakarta
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KETENTUAN -->
+    <section id="ketentuan" class="section-wrap alt">
+      <div class="section-label reveal">Aturan Main</div>
+      <h2 class="section-title reveal">Ketentuan Kompetisi</h2>
+      <div class="ket-grid">
+        <div class="ket-card reveal">
+          <div class="ket-icon">👥</div>
+          <div class="ket-title">Ketentuan Peserta</div>
+          <ul class="ket-list">
+            <li>
+              Kelompok pelajar sekolah menengah berdomisili di Banjarnegara
+            </li>
+            <li>Kategori SMA / SMK / MA / sederajat</li>
+            <li>Kategori SMP / MTs / sederajat</li>
+            <li>Pendaftaran gratis (tidak dipungut biaya)</li>
+            <li>Boleh mengirim lebih dari 1 film</li>
+          </ul>
+        </div>
+        <div class="ket-card reveal">
+          <div class="ket-icon">🎬</div>
+          <div class="ket-title">Ketentuan Film</div>
+          <ul class="ket-list">
+            <li>
+              Tema:
+              <strong style="color: var(--text)"
+                >"Banjarnegara Local Wisdom"</strong
+              >
+            </li>
+            <li>Jenis: Film Fiksi atau Film Dokumenter</li>
+            <li>Format: MP4, codec H.264</li>
+            <li>Resolusi minimal: 1920 × 1080 px</li>
+            <li>Durasi: maksimal 15 menit (termasuk opening & credit title)</li>
+            <li>Tahun produksi: 2026</li>
+          </ul>
+        </div>
+        <div class="ket-card reveal">
+          <div class="ket-icon">⚠️</div>
+          <div class="ket-title">Yang Tidak Boleh</div>
+          <ul class="ket-list">
+            <li>Tidak boleh menggunakan teknologi AI dalam bentuk apapun</li>
+            <li>
+              Tidak mengandung unsur kesusilaan, kekerasan, pornografi, SARA
+            </li>
+            <li>Tidak melanggar hak cipta musik, foto, atau grafis</li>
+            <li>Karya belum pernah dipublikasikan di platform manapun</li>
+          </ul>
+        </div>
+        <div class="ket-card reveal">
+          <div class="ket-icon">📤</div>
+          <div class="ket-title">Pengumpulan Karya</div>
+          <ul class="ket-list">
+            <li>
+              Upload lewat:
+              <strong style="color: var(--blue-lt)"
+                >s.id/PengumpulanKaryaBanjarnegaraMovies</strong
+              >
+            </li>
+            <li>Sertakan link Google Drive film yang sudah diupload</li>
+            <li>Lampirkan trailer film + 5 foto still adegan</li>
+            <li>Scan surat pernyataan yang telah diisi</li>
+            <li>Scan kartu pelajar / KTP sutradara</li>
+            <li>
+              Batas akhir:
+              <strong style="color: var(--text)"
+                >11 Juli 2026, 23.59 WIB</strong
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top: 20px" class="reveal">
+        <p style="font-size: 0.82rem; color: var(--text-dim); line-height: 1.7">
+          ℹ️ Jika menggunakan bahasa daerah, wajib mencantumkan terjemahan
+          Bahasa Indonesia yang jelas. Hak cipta karya tetap milik peserta.
+          Panitia memiliki hak siar untuk kepentingan publikasi.
+        </p>
+      </div>
+    </section>
+
+    <!-- PENGHARGAAN -->
+    <section id="penghargaan" class="section-wrap">
+      <div class="section-label reveal">Hadiah</div>
+      <h2 class="section-title reveal">Penghargaan & Hadiah</h2>
+      <div class="award-grid">
+        <div class="award-card reveal">
+          <div class="award-type">Film Fiksi</div>
+          <div class="award-name">Tingkat SMA / SMK / MA</div>
+          <div class="award-levels">
+            <div class="award-level">
+              <span>🥇 Juara 1</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>🥈 Juara 2</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>🥉 Juara 3</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>Harapan 1, 2, 3</span><span>Piagam</span>
+            </div>
+          </div>
+        </div>
+        <div class="award-card reveal">
+          <div class="award-type">Film Fiksi</div>
+          <div class="award-name">Tingkat SMP / MTs</div>
+          <div class="award-levels">
+            <div class="award-level">
+              <span>🥇 Juara 1</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>🥈 Juara 2</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>🥉 Juara 3</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>Harapan 1, 2, 3</span><span>Piagam</span>
+            </div>
+          </div>
+        </div>
+        <div class="award-card reveal">
+          <div class="award-type">Film Dokumenter</div>
+          <div class="award-name">Tingkat SMA / SMK / MA</div>
+          <div class="award-levels">
+            <div class="award-level">
+              <span>🥇 Juara 1</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>🥈 Juara 2</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>🥉 Juara 3</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>Harapan 1, 2, 3</span><span>Piagam</span>
+            </div>
+          </div>
+        </div>
+        <div class="award-card reveal">
+          <div class="award-type">Film Dokumenter</div>
+          <div class="award-name">Tingkat SMP / MTs</div>
+          <div class="award-levels">
+            <div class="award-level">
+              <span>🥇 Juara 1</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>🥈 Juara 2</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>🥉 Juara 3</span><span>Piagam + Uang Pembinaan</span>
+            </div>
+            <div class="award-level">
+              <span>Harapan 1, 2, 3</span><span>Piagam</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="award-note reveal">
+        🏛️ Piagam penghargaan ditandatangani dan diserahkan langsung oleh
+        <strong>Bupati Banjarnegara</strong>. Seluruh peserta yang mengirimkan
+        karya mendapatkan <strong>sertifikat kepesertaan</strong>.
+      </div>
+    </section>
+
+    <!-- BERITA & ARTIKEL -->
+    <section id="berita" class="section-wrap alt">
+      <div class="section-label reveal">Berita & Artikel</div>
+      <h2 class="section-title reveal">
+        Info Terkini<br />Banjarnegara Movies
+      </h2>
+      <div class="berita-grid">
+        <!-- Card 1 — Barcode / Scan Here (featured) -->
+        <a
+          href="https://forms.gle/3XeQwJQyXZ2NqD7X9"
+          target="_blank"
+          class="berita-card reveal"
+        >
+          <div class="berita-scan-img">
+            <img src="Code.png" alt="Register and Scan Here" />
+          </div>
+          <div class="berita-body">
+            <div class="berita-tag">Pendaftaran</div>
+            <div class="berita-judul">
+              Register & Scan Here — Daftar Lewat HP Langsung!
+            </div>
+            <div class="berita-desc">
+              Scan QR Code di atas untuk langsung membuka form pendaftaran
+              Banjarnegara Movies 2026. Skip antrian, langsung upload berkas
+              dari ponselmu.
+            </div>
+            <div class="berita-date">
+              Link: s.id/RegistrasiBanjarnegaraMovies
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2 — Tema Festival -->
+        <a href="#ketentuan" class="berita-card reveal">
+          <div class="berita-thumb">
+            <div class="berita-thumb-placeholder">🏔️</div>
+          </div>
+          <div class="berita-body">
+            <div class="berita-tag">Tema 2026</div>
+            <div class="berita-judul">
+              Tema Festival: "Banjarnegara Local Wisdom"
+            </div>
+            <div class="berita-desc">
+              Kehidupan sehari-hari, bahasa, seni, tradisi, budaya, kuliner, dan
+              wisata Banjarnegara.
+            </div>
+            <div class="berita-date">April 2026</div>
+          </div>
+        </a>
+
+        <!-- Card 3 — Pengumpulan Karya -->
+        <a
+          href="https://s.id/PengumpulanKaryaBanjarnegaraMovies"
+          target="_blank"
+          class="berita-card reveal"
+        >
+          <div class="berita-thumb">
+            <div class="berita-thumb-placeholder">📽️</div>
+          </div>
+          <div class="berita-body">
+            <div class="berita-tag">Pengumpulan</div>
+            <div class="berita-judul">
+              Cara Kumpulkan Karya Film — Deadline 11 Juli 2026
+            </div>
+            <div class="berita-desc">
+              Upload link Google Drive + trailer + 5 foto still + surat
+              pernyataan sebelum 23.59 WIB.
+            </div>
+            <div class="berita-date">Deadline: 11 Juli 2026</div>
+          </div>
+        </a>
+      </div>
+      <div style="text-align: center; margin-top: 40px" class="reveal">
+        <a
+          href="https://www.instagram.com/banjarnegaramovies"
+          target="_blank"
+          class="btn-ghost"
+          >Lihat Update di Instagram</a
+        >
+      </div>
+    </section>
+
+    <!-- CTA DAFTAR -->
+    <section id="daftar" class="section-wrap alt">
+      <div class="section-label reveal">Ayo Ikut!</div>
+      <h2 class="section-title reveal">Daftarkan Filmmu<br />Sekarang</h2>
+      <p class="reveal">
+        Pendaftaran gratis, terbuka untuk pelajar SMP & SMA se-Kabupaten
+        Banjarnegara. Deadline:
+        <strong style="color: var(--text)">11 Juli 2026</strong>.
+      </p>
+      <p class="daftar-link reveal">
+        Link registrasi:
+        <a href="https://forms.gle/3XeQwJQyXZ2NqD7X9" target="_blank"
+          >s.id/RegistrasiBanjarnegaraMovies</a
+        >
+      </p>
+      <div class="daftar-actions reveal">
+        <a
+          href="https://forms.gle/3XeQwJQyXZ2NqD7X9"
+          target="_blank"
+          class="btn-primary"
+          >Daftar Peserta</a
+        >
+        <a
+            href="https://forms.gle/3XeQwJQyXZ2NqD7X9"
+            target="_blank"
+            class="btn-primary"
+            >Pengumpulan karya</a
+          >
+        <a
+          href="https://www.instagram.com/banjarnegaramovies"
+          target="_blank"
+          class="btn-ghost"
+          >Follow Instagram</a
+        >
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="section-wrap">
+      <div class="section-label reveal">Hubungi Kami</div>
+      <h2 class="section-title reveal">Kontak Panitia</h2>
+      <div class="kontak-grid">
+        <div class="kontak-card reveal">
+          <div class="kontak-icon">💬</div>
+          <div class="kontak-role">Admin</div>
+          <div class="kontak-name">Admin</div>
+          <div class="kontak-detail">
+            <a href="https://wa.me/62089771353118">0897-7135-318</a>
+          </div>
+        </div>
+        <div class="kontak-card reveal">
+          <div class="kontak-icon">🏛️</div>
+          <div class="kontak-role">Sekretariat</div>
+          <div class="kontak-name">Disparbud Banjarnegara</div>
+          <div class="kontak-detail">
+            Dinas Pariwisata & Kebudayaan Kab. Banjarnegara · Bidang EKRAF
+          </div>
+        </div>
+        <div class="kontak-card reveal">
+          <div class="kontak-icon">📸</div>
+          <div class="kontak-role">Media Sosial</div>
+          <div class="kontak-name">@banjarnegaramovies</div>
+          <div class="kontak-detail">
+            <a
+              href="https://www.instagram.com/banjarnegaramovies"
+              target="_blank"
+              >Instagram</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="BnaLogo.png" alt="Banjarnegara Movies" />
+          <p>
+            Festival film kompetitif pelajar Kabupaten Banjarnegara.
+            Diselenggarakan oleh Dinas Pariwisata & Kebudayaan Kab.
+            Banjarnegara, Bidang EKRAF.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#linimasa">Linimasa</a></li>
+            <li><a href="#juri">Dewan Juri</a></li>
+            <li><a href="#ketentuan">Ketentuan</a></li>
+            <li><a href="#penghargaan">Penghargaan</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Link Penting</h4>
+          <ul>
+            <li>
+              <a href="https://forms.gle/3XeQwJQyXZ2NqD7X9" target="_blank"
+                >Daftar Peserta</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://s.id/PengumpulanKaryaBanjarnegaraMovies"
+                target="_blank"
+                >Kumpulkan Karya</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/banjarnegaramovies"
+                target="_blank"
+                >Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <li>
+              <a href="https://wa.me/62089771353118">Admin: 0897-7135-318</a>
+            </li>
+            <li>
+              <a href="https://wa.me/6281327776266">Peserta: 0813-2777-6266</a>
+            </li>
+            <li><a>Kab. Banjarnegara, Jawa Tengah</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+          <p style="text-align:center; width:100%; margin-bottom:16px; font-size:.72rem; color:var(--text-dim); opacity:.55;">Dipersembahkan oleh</p>
+  <div style="display:flex; justify-content:center; align-items:center; gap:20px; width:100%; margin-bottom:20px;">
+    <img src="Beutiful.png" alt="Banjarnegara" style="height:48px; width:auto; object-fit:contain;" />
+    <img src="Ijo.png" alt="Banjarnegara" style="height:48px; width:auto; object-fit:contain;" />
+    <img src="New Ekraf.png" alt="EKRAF" style="height: 70px; width:auto; object-fit:contain;" />
+  </div>
+  <p style="text-align:center; width:100%; font-size:.72rem; color:var(--text-dim); opacity:.55;">
+    © 2026 Banjarnegara Movies · Dinas Pariwisata & Kebudayaan Kab. Banjarnegara
+  </p>
+        
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const nav = document.getElementById("navbar");
+      window.addEventListener("scroll", () =>
+        nav.classList.toggle("scrolled", window.scrollY > 60),
+      );
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              const siblings = [
+                ...e.target.parentElement.querySelectorAll(
+                  ".reveal:not(.visible)",
+                ),
+              ];
+              const delay = Math.min(siblings.indexOf(e.target) * 70, 280);
+              setTimeout(() => e.target.classList.add("visible"), delay);
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

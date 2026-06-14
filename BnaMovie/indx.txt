@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banjarnegara Movies 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-05-23_at_7_08_21_PM.jpeg" alt="Banjarnegara Movies" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#linimasa">Linimasa</a></li>
+    <li><a href="#juri">Juri</a></li>
+    <li><a href="#ketentuan">Ketentuan</a></li>
+    <li><a href="#penghargaan">Penghargaan</a></li>
+    <li><a href="#berita">Berita</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+  <a href="https://forms.gle/3XeQwJQyXZ2NqD7X9" target="_blank" class="nav-cta">Daftar Sekarang</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <!-- Tugu Banjarnegara silhouette -->
+  <div class="tugu-deco">
+    <svg viewBox="0 0 200 600" xmlns="http://www.w3.org/2000/svg" fill="white">
+      <!-- simplified tugu shape -->
+      <rect x="90" y="520" width="20" height="70" rx="2"/>
+      <rect x="80" y="510" width="40" height="14" rx="3"/>
+      <!-- shaft with stripes -->
+      <rect x="93" y="200" width="14" height="310" rx="2"/>
+      <rect x="89" y="280" width="22" height="6" rx="1" opacity=".6"/>
+      <rect x="89" y="300" width="22" height="6" rx="1" opacity=".6"/>
+      <rect x="89" y="320" width="22" height="6" rx="1" opacity=".6"/>
+      <rect x="89" y="340" width="22" height="6" rx="1" opacity=".6"/>
+      <rect x="89" y="360" width="22" height="6" rx="1" opacity=".6"/>
+      <rect x="89" y="380" width="22" height="6" rx="1" opacity=".6"/>
+      <rect x="89" y="400" width="22" height="6" rx="1" opacity=".6"/>
+      <rect x="89" y="420" width="22" height="6" rx="1" opacity=".6"/>
+      <rect x="89" y="440" width="22" height="6" rx="1" opacity=".6"/>
+      <rect x="89" y="460" width="22" height="6" rx="1" opacity=".6"/>
+      <!-- body wider -->
+      <rect x="85" y="140" width="30" height="65" rx="3"/>
+      <!-- neck -->
+      <rect x="92" y="110" width="16" height="35" rx="2"/>
+      <!-- crown top -->
+      <polygon points="100,20 80,110 120,110"/>
+      <polygon points="100,30 88,80 112,80" opacity=".4"/>
+      <!-- crown tips -->
+      <polygon points="100,10 95,35 105,35"/>
+      <polygon points="84,45 80,75 90,68"/>
+      <polygon points="116,45 120,75 110,68"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">Festival Film Pelajar · Banjarnegara 2026</div>
+    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-05-23_at_7_08_21_PM.jpeg" alt="Banjarnegara Movies" class="hero-logo-img" />
+    <h1 class="hero-tagline">
+      Ceritakan <em>Kearifan Lokal</em><br>Banjarnegara Lewat Film
+    </h1>
+    <p class="hero-sub">
+      Kompetisi film pelajar SMP & SMA se-Kabupaten Banjarnegara. Tema: <strong style="color:var(--text)">"Banjarnegara Local Wisdom"</strong> — kehidupan sehari-hari, tradisi, budaya, kuliner, dan wisata.
+    </p>
+    <div class="hero-actions">
+      <a href="https://forms.gle/3XeQwJQyXZ2NqD7X9" target="_blank" class="btn-primary">Daftar Peserta</a>
+      <a href="#ketentuan" class="btn-ghost">Lihat Ketentuan</a>
+    </div>
+    <div class="hero-cards">
+      <div class="hcard">
+        <div class="hcard-label">Deadline Karya</div>
+        <div class="hcard-val">11 Juli 2026</div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-label">Kategori</div>
+        <div class="hcard-val">SMP & SMA</div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-label">Biaya</div>
+        <div class="hcard-val">Gratis 🎉</div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-label">Jenis Film</div>
+        <div class="hcard-val">Fiksi & Dokumenter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang" class="section-wrap">
+  <div class="tentang-grid">
+    <div class="tentang-visual reveal">
+      <div class="tentang-frame">
+        <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-05-23_at_7_08_21_PM.jpeg" alt="Banjarnegara Movies Logo" />
+      </div>
+      <div class="tentang-badge">
+        <div class="tentang-badge-year">2026</div>
+        <div class="tentang-badge-text">Edition</div>
+      </div>
+    </div>
+    <div class="tentang-text">
+      <div class="section-label reveal">Tentang Festival</div>
+      <h2 class="section-title reveal">Panggung Sineas<br>Muda Banjarnegara</h2>
+      <p class="reveal">Banjarnegara Movies adalah festival film kompetitif yang diselenggarakan oleh Dinas Pariwisata & Kebudayaan Kabupaten Banjarnegara, Bidang Ekonomi Kreatif (EKRAF).</p>
+      <p class="reveal">Hadir sebagai wadah bagi pelajar SMP dan SMA se-Kabupaten Banjarnegara untuk mengekspresikan kreativitas melalui karya film yang mengangkat kearifan lokal daerah.</p>
+      <p class="reveal">Festival ini terbuka gratis, boleh mengirim lebih dari satu karya, dan semua peserta mendapatkan sertifikat kepesertaan resmi.</p>
+      <div class="stat-row reveal">
+        <div><div class="stat-num">2</div><div class="stat-label">Jenis Film</div></div>
+        <div><div class="stat-num">4</div><div class="stat-label">Kategori Award</div></div>
+        <div><div class="stat-num">0</div><div class="stat-label">Biaya Daftar</div></div>
+      </div>
+      <div style="margin-top:32px;" class="reveal">
+        <a href="https://forms.gle/3XeQwJQyXZ2NqD7X9" target="_blank" class="btn-primary">Daftar Sekarang</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINIMASA -->
+<section id="linimasa" class="section-wrap alt">
+  <div class="section-label reveal">Timeline</div>
+  <h2 class="section-title reveal">Jadwal Kegiatan 2026</h2>
+  <div class="timeline-grid">
+    <div class="tl-item reveal">
+      <div class="tl-step">01</div>
+      <div class="tl-event">Sosialisasi Tahap II & Pendaftaran</div>
+      <div class="tl-date">April 2026 (Minggu ke-IV)</div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-step">02</div>
+      <div class="tl-event">Pendaftaran Peserta & Produksi</div>
+      <div class="tl-date">Mei 2026</div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-step">03</div>
+      <div class="tl-event">Layar Pelajar di Festival Kopi Dieng</div>
+      <div class="tl-date">Mei – Juni 2026</div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-step">04</div>
+      <div class="tl-event">Batas Akhir Pengumpulan Karya</div>
+      <div class="tl-date">11 Juli 2026 · 23.59 WIB</div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-step">05</div>
+      <div class="tl-event">Kurasi & Penjurian</div>
+      <div class="tl-date">Juli 2026 (Minggu ke-II)</div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-step">06</div>
+      <div class="tl-event">Penganugerahan & Penutupan</div>
+      <div class="tl-date">Juli 2026 (Minggu ke-III)</div>
+    </div>
+  </div>
+</section>
+
+<!-- JURI -->
+<section id="juri" class="section-wrap">
+  <div class="section-label reveal">Dewan Juri</div>
+  <h2 class="section-title reveal">Para Juri Festival 2026</h2>
+  <div class="juri-grid">
+    <div class="juri-card juri-ketua reveal">
+      <div class="juri-photo">
+        <img src="/mnt/user-data/uploads/Bp__Sagiyo__S_IP.png" alt="Bp. Sagiyo" />
+      </div>
+      <div class="juri-info">
+        <div class="juri-role">Ketua / Pembina</div>
+        <div class="juri-name">Bp. Sagiyo, S.IP</div>
+        <div class="juri-pos">Kepala Dinas Komunikasi dan Informatika Kab. Banjarnegara · Alumni Komunikasi UGM</div>
+      </div>
+    </div>
+    <div class="juri-card reveal">
+      <div class="juri-photo">
+        <img src="/mnt/user-data/uploads/Dena_Ema_Pribadi.png" alt="Dena Ema Pribadi" />
+      </div>
+      <div class="juri-info">
+        <div class="juri-role">Juri — Akting & Seni Peran</div>
+        <div class="juri-name">Dena Ema Pribadi</div>
+        <div class="juri-pos">Model · Aktor · Presenter. Dikenal lewat film 13 Bom di Jakarta, Aum!, Love of Fate, dan lainnya.</div>
+      </div>
+    </div>
+    <div class="juri-card reveal">
+      <div class="juri-photo">
+        <img src="/mnt/user-data/uploads/Dr__Ferdinanda__M_Sn.png" alt="Dr. Ferdinanda" />
+      </div>
+      <div class="juri-info">
+        <div class="juri-role">Juri — Sinematografi & Visual</div>
+        <div class="juri-name">Dr. Ferdinanda, M.Sn</div>
+        <div class="juri-pos">Dosen DKV Telkom University · Videografer PT Artec Technology · Alumni ISI Surakarta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KETENTUAN -->
+<section id="ketentuan" class="section-wrap alt">
+  <div class="section-label reveal">Aturan Main</div>
+  <h2 class="section-title reveal">Ketentuan Kompetisi</h2>
+  <div class="ket-grid">
+    <div class="ket-card reveal">
+      <div class="ket-icon">👥</div>
+      <div class="ket-title">Ketentuan Peserta</div>
+      <ul class="ket-list">
+        <li>Kelompok pelajar sekolah menengah berdomisili di Banjarnegara</li>
+        <li>Kategori SMA / SMK / MA / sederajat</li>
+        <li>Kategori SMP / MTs / sederajat</li>
+        <li>Pendaftaran gratis (tidak dipungut biaya)</li>
+        <li>Boleh mengirim lebih dari 1 film</li>
+      </ul>
+    </div>
+    <div class="ket-card reveal">
+      <div class="ket-icon">🎬</div>
+      <div class="ket-title">Ketentuan Film</div>
+      <ul class="ket-list">
+        <li>Tema: <strong style="color:var(--text)">"Banjarnegara Local Wisdom"</strong></li>
+        <li>Jenis: Film Fiksi atau Film Dokumenter</li>
+        <li>Format: MP4, codec H.264</li>
+        <li>Resolusi minimal: 1920 × 1080 px</li>
+        <li>Durasi: maksimal 15 menit (termasuk opening & credit title)</li>
+        <li>Tahun produksi: 2026</li>
+      </ul>
+    </div>
+    <div class="ket-card reveal">
+      <div class="ket-icon">⚠️</div>
+      <div class="ket-title">Yang Tidak Boleh</div>
+      <ul class="ket-list">
+        <li>Tidak boleh menggunakan teknologi AI dalam bentuk apapun</li>
+        <li>Tidak mengandung unsur kesusilaan, kekerasan, pornografi, SARA</li>
+        <li>Tidak melanggar hak cipta musik, foto, atau grafis</li>
+        <li>Karya belum pernah dipublikasikan di platform manapun</li>
+      </ul>
+    </div>
+    <div class="ket-card reveal">
+      <div class="ket-icon">📤</div>
+      <div class="ket-title">Pengumpulan Karya</div>
+      <ul class="ket-list">
+        <li>Upload lewat: <strong style="color:var(--blue-lt)">s.id/PengumpulanKaryaBanjarnegaraMovies</strong></li>
+        <li>Sertakan link Google Drive film yang sudah diupload</li>
+        <li>Lampirkan trailer film + 5 foto still adegan</li>
+        <li>Scan surat pernyataan yang telah diisi</li>
+        <li>Scan kartu pelajar / KTP sutradara</li>
+        <li>Batas akhir: <strong style="color:var(--text)">11 Juli 2026, 23.59 WIB</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:20px;" class="reveal">
+    <p style="font-size:.82rem;color:var(--text-dim);line-height:1.7;">
+      ℹ️ Jika menggunakan bahasa daerah, wajib mencantumkan terjemahan Bahasa Indonesia yang jelas. Hak cipta karya tetap milik peserta. Panitia memiliki hak siar untuk kepentingan publikasi.
+    </p>
+  </div>
+</section>
+
+<!-- PENGHARGAAN -->
+<section id="penghargaan" class="section-wrap">
+  <div class="section-label reveal">Hadiah</div>
+  <h2 class="section-title reveal">Penghargaan & Hadiah</h2>
+  <div class="award-grid">
+    <div class="award-card reveal">
+      <div class="award-type">Film Fiksi</div>
+      <div class="award-name">Tingkat SMA / SMK / MA</div>
+      <div class="award-levels">
+        <div class="award-level"><span>🥇 Juara 1</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>🥈 Juara 2</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>🥉 Juara 3</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>Harapan 1, 2, 3</span><span>Piagam</span></div>
+      </div>
+    </div>
+    <div class="award-card reveal">
+      <div class="award-type">Film Fiksi</div>
+      <div class="award-name">Tingkat SMP / MTs</div>
+      <div class="award-levels">
+        <div class="award-level"><span>🥇 Juara 1</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>🥈 Juara 2</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>🥉 Juara 3</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>Harapan 1, 2, 3</span><span>Piagam</span></div>
+      </div>
+    </div>
+    <div class="award-card reveal">
+      <div class="award-type">Film Dokumenter</div>
+      <div class="award-name">Tingkat SMA / SMK / MA</div>
+      <div class="award-levels">
+        <div class="award-level"><span>🥇 Juara 1</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>🥈 Juara 2</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>🥉 Juara 3</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>Harapan 1, 2, 3</span><span>Piagam</span></div>
+      </div>
+    </div>
+    <div class="award-card reveal">
+      <div class="award-type">Film Dokumenter</div>
+      <div class="award-name">Tingkat SMP / MTs</div>
+      <div class="award-levels">
+        <div class="award-level"><span>🥇 Juara 1</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>🥈 Juara 2</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>🥉 Juara 3</span><span>Piagam + Uang Pembinaan</span></div>
+        <div class="award-level"><span>Harapan 1, 2, 3</span><span>Piagam</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="award-note reveal">
+    🏛️ Piagam penghargaan ditandatangani dan diserahkan langsung oleh <strong>Bupati Banjarnegara</strong>. Seluruh peserta yang mengirimkan karya mendapatkan <strong>sertifikat kepesertaan</strong>.
+  </div>
+</section>
+
+<!-- BERITA & ARTIKEL -->
+<section id="berita" class="section-wrap alt">
+  <div class="section-label reveal">Berita & Artikel</div>
+  <h2 class="section-title reveal">Info Terkini<br>Banjarnegara Movies</h2>
+  <div class="berita-grid">
+
+    <!-- Card 1 — Barcode / Scan Here (featured) -->
+    <a href="https://forms.gle/3XeQwJQyXZ2NqD7X9" target="_blank" class="berita-card reveal">
+      <div class="berita-scan-img">
+        <img src="/mnt/user-data/uploads/Barcode_Registrasi.jpeg" alt="Register and Scan Here" />
+      </div>
+      <div class="berita-body">
+        <div class="berita-tag">Pendaftaran</div>
+        <div class="berita-judul">Register & Scan Here — Daftar Lewat HP Langsung!</div>
+        <div class="berita-desc">Scan QR Code di atas untuk langsung membuka form pendaftaran Banjarnegara Movies 2026. Skip antrian, langsung upload berkas dari ponselmu.</div>
+        <div class="berita-date">Link: s.id/RegistrasiBanjarnegaraMovies</div>
+      </div>
+    </a>
+
+    <!-- Card 2 — Tema Festival -->
+    <a href="#ketentuan" class="berita-card reveal">
+      <div class="berita-thumb">
+        <div class="berita-thumb-placeholder">🏔️</div>
+      </div>
+      <div class="berita-body">
+        <div class="berita-tag">Tema 2026</div>
+        <div class="berita-judul">Tema Festival: "Banjarnegara Local Wisdom"</div>
+        <div class="berita-desc">Kehidupan sehari-hari, bahasa, seni, tradisi, budaya, kuliner, dan wisata Banjarnegara.</div>
+        <div class="berita-date">April 2026</div>
+      </div>
+    </a>
+
+    <!-- Card 3 — Pengumpulan Karya -->
+    <a href="https://s.id/PengumpulanKaryaBanjarnegaraMovies" target="_blank" class="berita-card reveal">
+      <div class="berita-thumb">
+        <div class="berita-thumb-placeholder">📽️</div>
+      </div>
+      <div class="berita-body">
+        <div class="berita-tag">Pengumpulan</div>
+        <div class="berita-judul">Cara Kumpulkan Karya Film — Deadline 11 Juli 2026</div>
+        <div class="berita-desc">Upload link Google Drive + trailer + 5 foto still + surat pernyataan sebelum 23.59 WIB.</div>
+        <div class="berita-date">Deadline: 11 Juli 2026</div>
+      </div>
+    </a>
+
+  </div>
+  <div style="text-align:center; margin-top:40px;" class="reveal">
+    <a href="https://www.instagram.com/banjarnegaramovies" target="_blank" class="btn-ghost">Lihat Update di Instagram</a>
+  </div>
+</section>
+
+<!-- CTA DAFTAR -->
+<section id="daftar" class="section-wrap alt">
+  <div class="section-label reveal">Ayo Ikut!</div>
+  <h2 class="section-title reveal">Daftarkan Filmmu<br>Sekarang</h2>
+  <p class="reveal">Pendaftaran gratis, terbuka untuk pelajar SMP & SMA se-Kabupaten Banjarnegara. Deadline: <strong style="color:var(--text)">11 Juli 2026</strong>.</p>
+  <p class="daftar-link reveal">Link registrasi: <a href="https://forms.gle/3XeQwJQyXZ2NqD7X9" target="_blank">s.id/RegistrasiBanjarnegaraMovies</a></p>
+  <div class="daftar-actions reveal">
+    <a href="https://forms.gle/3XeQwJQyXZ2NqD7X9" target="_blank" class="btn-primary">Daftar Peserta</a>
+    <a href="https://www.instagram.com/banjarnegaramovies" target="_blank" class="btn-ghost">Follow Instagram</a>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak" class="section-wrap">
+  <div class="section-label reveal">Hubungi Kami</div>
+  <h2 class="section-title reveal">Kontak Panitia</h2>
+  <div class="kontak-grid">
+    <div class="kontak-card reveal">
+      <div class="kontak-icon">💬</div>
+      <div class="kontak-role">Admin</div>
+      <div class="kontak-name">Budi Dermawan</div>
+      <div class="kontak-detail"><a href="https://wa.me/62089771353118">0897-7135-318</a></div>
+    </div>
+    <div class="kontak-card reveal">
+      <div class="kontak-icon">📋</div>
+      <div class="kontak-role">Koord. Kepesertaan</div>
+      <div class="kontak-name">Feri Tulistiyono</div>
+      <div class="kontak-detail"><a href="https://wa.me/6281327776266">0813-2777-6266</a></div>
+    </div>
+    <div class="kontak-card reveal">
+      <div class="kontak-icon">🏛️</div>
+      <div class="kontak-role">Sekretariat</div>
+      <div class="kontak-name">Disparbud Banjarnegara</div>
+      <div class="kontak-detail">Dinas Pariwisata & Kebudayaan Kab. Banjarnegara · Bidang EKRAF</div>
+    </div>
+    <div class="kontak-card reveal">
+      <div class="kontak-icon">📸</div>
+      <div class="kontak-role">Media Sosial</div>
+      <div class="kontak-name">@banjarnegaramovies</div>
+      <div class="kontak-detail"><a href="https://www.instagram.com/banjarnegaramovies" target="_blank">Instagram</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-05-23_at_7_08_21_PM.jpeg" alt="Banjarnegara Movies" />
+      <p>Festival film kompetitif pelajar Kabupaten Banjarnegara. Diselenggarakan oleh Dinas Pariwisata & Kebudayaan Kab. Banjarnegara, Bidang EKRAF.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigasi</h4>
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#linimasa">Linimasa</a></li>
+        <li><a href="#juri">Dewan Juri</a></li>
+        <li><a href="#ketentuan">Ketentuan</a></li>
+        <li><a href="#penghargaan">Penghargaan</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Link Penting</h4>
+      <ul>
+        <li><a href="https://forms.gle/3XeQwJQyXZ2NqD7X9" target="_blank">Daftar Peserta</a></li>
+        <li><a href="https://s.id/PengumpulanKaryaBanjarnegaraMovies" target="_blank">Kumpulkan Karya</a></li>
+        <li><a href="https://www.instagram.com/banjarnegaramovies" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <ul>
+        <li><a href="https://wa.me/62089771353118">Admin: 0897-7135-318</a></li>
+        <li><a href="https://wa.me/6281327776266">Peserta: 0813-2777-6266</a></li>
+        <li><a>Kab. Banjarnegara, Jawa Tengah</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Banjarnegara Movies · Dinas Pariwisata & Kebudayaan Kab. Banjarnegara</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/banjarnegaramovies" target="_blank" title="Instagram">IG</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
